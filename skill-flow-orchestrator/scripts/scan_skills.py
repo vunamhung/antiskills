@@ -10,7 +10,7 @@ import json
 import yaml
 from pathlib import Path
 from datetime import datetime
-from typing import Optional, List, Dict
+from typing import Optional, List
 
 
 def parse_yaml_frontmatter(content: str) -> dict:
@@ -149,7 +149,7 @@ def main():
     script_dir = Path(__file__).parent
     skill_dir = script_dir.parent
     skills_root = skill_dir.parent
-    sfo_dir = skills_root / ".agent" / "sfo"
+    sfo_dir = skills_root.parent / "sfo"
 
     # Create output directory
     sfo_dir.mkdir(parents=True, exist_ok=True)
